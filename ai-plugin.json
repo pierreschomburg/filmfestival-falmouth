@@ -1,0 +1,16 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Film Festival Assistant",
+    "name_for_model": "film_festival_assistant",
+    "description_for_human": "Assists with managing film festival operations, including emails, scheduling, research, and document creation.",
+    "description_for_model": "Helps manage film festival tasks like emails, scheduling, research, and creating legal and financial documents.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://pierreschomburg.github.io/film-festival-assistant/openapi.yaml"
+    },
+    "logo_url": "https://www.echoclinics.nhs.uk/wp-content/uploads/female-placeholder.jpg",
+    "contact_email": "alex99pierre@icloud.com",
+}
