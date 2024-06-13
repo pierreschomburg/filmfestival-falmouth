@@ -1,0 +1,89 @@
+openapi: 3.0.1
+info:
+  title: Film Festival Assistant API
+  description: API for managing film festival tasks
+  version: 'v1'
+servers:
+  - url: https://pierreschomburg.github.io/film-festival-assistant/api
+paths:
+  /email/send:
+    post:
+      summary: Send an email
+      operationId: sendEmail
+      requestBody:
+        description: Email details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendEmailRequest'
+      responses:
+        '200':
+          description: Email sent successfully
+  /calendar/events:
+    get:
+      summary: Get upcoming events
+      operationId: getEvents
+      responses:
+        '200':
+          description: List of upcoming events
+          content:
+            application/json:
+              $ref: '#/components/schemas/GetEventsResponse'
+  /document/create:
+    post:
+      summary: Create a document
+      operationId: createDocument
+      requestBody:
+        description: Document details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDocumentRequest'
+      responses:
+        '200':
+          description: Document created successfully
+  /seo/audit:
+    get:
+      summary: Perform SEO audit
+      operationId: performSEOAudit
+      responses:
+        '200':
+          description: SEO audit results
+          content:
+            application/json:
+              $ref: '#/components/schemas/SEOAuditResponse'
+components:
+  schemas:
+    SendEmailRequest:
+      type: object
+      properties:
+        to:
+          type: string
+          description: The recipient's email address.
+        subject:
+          type: string
+          description: The subject of the email.
+        body:
+          type: string
+          description: The body content of the email.
+    GetEventsResponse:
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            type: string
+    CreateDocumentRequest:
+      type: object
+      properties:
+        documentType:
+          type: string
+          description: The type of document to create (e.g., contract, financial report).
+        content:
+          type: string
+          description: The content to include in the document.
+    SEOAuditResponse:
+      type: object
+      properties:
+        auditResults:
+          type: string
